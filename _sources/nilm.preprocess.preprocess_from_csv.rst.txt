@@ -1,0 +1,7 @@
+nilm.preprocess.preprocess_from_csv
+===================================
+
+.. automodule:: nilm.preprocess.preprocess_from_csv
+   :members: PreFromCsv
+   :noindex: 
+

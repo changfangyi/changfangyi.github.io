@@ -1,0 +1,8 @@
+nilm.db.forms
+==============
+
+.. automodule:: nilm.db.forms   
+   :members: NilmTrainForm, NilmTestForm
+   :noindex:
+
+

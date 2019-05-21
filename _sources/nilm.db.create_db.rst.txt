@@ -1,0 +1,8 @@
+nilm.db.create_db
+=================
+
+.. automodule:: nilm.db.create_db   
+   :members: Nilmtrain, Nilmtest
+   :noindex:
+
+

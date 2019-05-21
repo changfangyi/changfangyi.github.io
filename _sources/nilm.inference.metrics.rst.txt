@@ -1,0 +1,7 @@
+nilm.inference.metrics
+=======================
+
+.. automodule:: nilm.inference.metrics   
+   :members: relative_error_in_total_energy, Metrics
+   :noindex: 
+

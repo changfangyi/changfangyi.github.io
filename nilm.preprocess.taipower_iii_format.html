@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_TW">
+  <head>
+    <meta charset="utf-8" />
+    <title>nilm.preprocess.taipower_iii_format &#8212; tapower_ami_apps 0.0 說明文件</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜尋" href="search.html" />
+    <link rel="next" title="nilm.trainer.bilstm" href="nilm.trainer.bilstm.html" />
+    <link rel="prev" title="nilm.preprocess.source" href="nilm.preprocess.source.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="nilm-preprocess-taipower-iii-format">
+<h1>nilm.preprocess.taipower_iii_format<a class="headerlink" href="#nilm-preprocess-taipower-iii-format" title="本標題的永久連結">¶</a></h1>
+<dl>
+<dt>..module: taipower_iii_format</dt><dd><dl class="field-list">
+<dt class="field-odd">synopsis</dt>
+<dd class="field-odd"><p>轉換台電內部資料至 In-Synergy 格式。</p>
+<p>補充：</p>
+<blockquote>
+<div><p>In-Synergy 格式為：</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>..moduleauther:: Fangyi</p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">nilm.preprocess.taipower_iii_format.</code><code class="descname">TaipowertoIII</code><span class="sig-paren">(</span><em>load_taipower_csv='simulate_taipower_data.csv'</em>, <em>save_iii_csv='from_taipower_to_III.csv'</em><span class="sig-paren">)</span></dt>
+<dd><p>轉換台電內部資料至 In-Synergy 格式</p>
+<dl class="field-list simple">
+<dt class="field-odd">參數</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>load_taipower_csv</strong> (<em>str</em>) – 資料讀取路徑。default:<cite>simulate_taipower_data.csv</cite></p></li>
+<li><p><strong>save_iii_csv</strong> (<em>str</em>) – 資料存取路徑。default:<cite>from_taipower_to_III.csv</cite></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt>
+<code class="descname">transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>啟動轉換</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tapower_ami_apps</a></h1>
+
+
+
+
+
+
+
+
+<h3>瀏覽</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="nilm.db.forms.html">nilm.db.forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.db.create_db.html">nilm.db.create_db</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.inference.infer.html">nilm.inference.infer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.inference.metrics.html">nilm.inference.metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.preprocess.both_main_apps_have_value.html">nilm.preprocess.both_main_apps_have_value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.preprocess.preprocess_from_csv.html">nilm.preprocess.preprocess_from_csv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.preprocess.source.html">nilm.preprocess.source</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">nilm.preprocess.taipower_iii_format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.bilstm.html">nilm.trainer.bilstm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.dae.html">nilm.trainer.dae</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.knn_layer.html">nilm.trainer.knn_layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.semi_layer_model.html">nilm.trainer.semi_layer_model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.sparse_auto_layer.html">nilm.trainer.sparse_auto_layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.trainer.html">nilm.trainer.trainer</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="nilm.preprocess.source.html" title="上一章">nilm.preprocess.source</a></li>
+      <li>Next: <a href="nilm.trainer.bilstm.html" title="下一章">nilm.trainer.bilstm</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜尋</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="搜" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Fangyi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/nilm.preprocess.taipower_iii_format.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

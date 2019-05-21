@@ -1,0 +1,7 @@
+nilm.trainer.sparse_auto_layer
+==============================
+
+.. automodule:: nilm.trainer.sparse_auto_layer
+   :members: SparseAuto
+   :noindex: 
+

@@ -1,0 +1,7 @@
+nilm.trainer.trainer
+====================
+
+.. automodule:: nilm.trainer.trainer
+   :members: Trainer
+   :noindex: 
+

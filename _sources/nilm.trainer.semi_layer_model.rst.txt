@@ -1,0 +1,7 @@
+nilm.trainer.semi_layer_model
+=============================
+
+.. automodule:: nilm.trainer.semi_layer_model
+   :members: SemiLayerModel
+   :noindex: 
+

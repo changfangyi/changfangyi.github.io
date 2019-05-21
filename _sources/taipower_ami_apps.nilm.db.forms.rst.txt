@@ -1,0 +1,8 @@
+taipower_ami_apps.nilm.db.forms
+===============================
+
+.. automodule:: taipower_ami_apps.nilm.db.forms   
+   :members: NilmTrainForm
+   :noindex:
+
+

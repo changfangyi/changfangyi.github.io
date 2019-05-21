@@ -1,0 +1,38 @@
+.. tapower_ami_apps documentation master file, created by
+   sphinx-quickstart on Fri May 17 20:55:10 2019.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to tapower_ami_apps's documentation!
+============================================
+
+.. toctree::
+   :maxdepth: 3
+   
+   nilm.db.forms.rst
+   nilm.db.create_db.rst
+
+   nilm.inference.infer.rst
+   nilm.inference.metrics.rst
+
+   nilm.preprocess.both_main_apps_have_value
+   nilm.preprocess.preprocess_from_csv
+   nilm.preprocess.source
+   nilm.preprocess.taipower_iii_format
+
+   nilm.trainer.bilstm
+   nilm.trainer.dae
+   nilm.trainer.knn_layer
+   nilm.trainer.semi_layer_model
+   nilm.trainer.sparse_auto_layer
+   nilm.trainer.trainer
+
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

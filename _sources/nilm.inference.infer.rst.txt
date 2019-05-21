@@ -1,0 +1,8 @@
+nilm.inference.infer
+====================
+
+.. automodule:: nilm.inference.infer   
+   :members: Infer
+   :noindex:
+
+

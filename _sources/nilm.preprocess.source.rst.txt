@@ -1,0 +1,7 @@
+nilm.preprocess.source
+======================
+
+.. automodule:: nilm.preprocess.source
+   :members: Sequence, RealSource, SynSource, RealandSynSample, UserDailyLoad 
+   :noindex: 
+

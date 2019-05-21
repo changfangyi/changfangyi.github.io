@@ -1,0 +1,7 @@
+nilm.preprocess.taipower_iii_format
+===================================
+
+.. automodule:: nilm.preprocess.taipower_iii_format
+   :members: TaipowertoIII
+   :noindex: 
+

@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_TW">
+  <head>
+    <meta charset="utf-8" />
+    <title>nilm.preprocess.source &#8212; tapower_ami_apps 0.0 說明文件</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜尋" href="search.html" />
+    <link rel="next" title="nilm.preprocess.taipower_iii_format" href="nilm.preprocess.taipower_iii_format.html" />
+    <link rel="prev" title="nilm.preprocess.preprocess_from_csv" href="nilm.preprocess.preprocess_from_csv.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="nilm-preprocess-source">
+<h1>nilm.preprocess.source<a class="headerlink" href="#nilm-preprocess-source" title="本標題的永久連結">¶</a></h1>
+<dl class="simple">
+<dt>..module: source</dt><dd><dl class="field-list simple">
+<dt class="field-odd">synopsis</dt>
+<dd class="field-odd"><p>本程式檔為 datapipeline 模組，例如：資料合成，資料取樣。包含四個類別:</p>
+<ul class="simple">
+<li><p>Sequence: 用電器具拆解訓練資料之 input 與標籤資料的格式規範</p></li>
+<li><p>RealSource: 真實資料之取樣</p></li>
+<li><p>SynSource: 合成資料之取樣</p></li>
+<li><p>RealandSynSample: 真實資料與合成資料之取樣之 datapipeline</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>..moduleauther::Fangyi</p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">nilm.preprocess.source.</code><code class="descname">Sequence</code><span class="sig-paren">(</span><em>shape</em>, <em>app_in_list</em><span class="sig-paren">)</span></dt>
+<dd><p>用電器具拆解訓練資料之 input 與標籤資料的格式規範</p>
+<dl class="field-list simple">
+<dt class="field-odd">參數</dt>
+<dd class="field-odd"><p><strong>shape</strong> (<em>int</em>) – 資料長度</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">nilm.preprocess.source.</code><code class="descname">RealSource</code><span class="sig-paren">(</span><em>data_to_memory</em>, <em>apps</em>, <em>seq_length</em>, <em>num_seq_per_batch=128</em><span class="sig-paren">)</span></dt>
+<dd><p>真實資料之取樣</p>
+<dl class="field-list simple">
+<dt class="field-odd">參數</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_to_memory</strong> (<em>dictionary</em>) – 用電資料，為接續 both_main_apps_have_value.load_into_memory。example:：{<cite>144660</cite>:{pandas.DataFrame}, …}</p></li>
+<li><p><strong>apps</strong> (<em>list</em>) – 欲讀取的總電量與電器，第一個元素必須為 main。example:[<cite>main</cite>, <cite>bw</cite>]</p></li>
+<li><p><strong>seq_length</strong> (<em>int</em>) – 欲讀取 batch 的每一筆資料長度。24hrs為單位的值為96</p></li>
+<li><p><strong>num_seq_per_batch</strong> (<em>int</em>) – 欲取的資料筆數</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">nilm.preprocess.source.</code><code class="descname">SynSource</code><span class="sig-paren">(</span><em>data_to_memory</em>, <em>apps</em>, <em>seq_length</em>, <em>num_seq_per_batch=128</em><span class="sig-paren">)</span></dt>
+<dd><p>合成資料之取樣，繼承於類別 RealSource。</p>
+<dl class="field-list simple">
+<dt class="field-odd">參數</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_to_memory</strong> – 用電資料，為接續 both_main_apps_have_value.load_into_memory。example:：{<cite>144660</cite>:{pandas.DataFrame}, …}</p></li>
+<li><p><strong>apps</strong> (<em>list</em>) – 欲讀取的總電量與電器，第一個元素必須為 main。example:[<cite>main</cite>, <cite>bw</cite>]</p></li>
+<li><p><strong>seq_length</strong> (<em>int</em>) – 欲讀取 batch 的每一筆資料長度。24hrs 為單位的值為 96</p></li>
+<li><p><strong>num_seq_per_batch</strong> (<em>int</em>) – 欲取的資料筆數</p></li>
+</ul>
+</dd>
+<dt class="field-even">傳回</dt>
+<dd class="field-even"><p>the Sequence class</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">nilm.preprocess.source.</code><code class="descname">RealandSynSample</code><span class="sig-paren">(</span><em>data_to_memory</em>, <em>apps</em>, <em>seq_length=60</em>, <em>num_seq_per_batch=128</em>, <em>realsource_probabilities=None</em>, <em>rng_seed=None</em><span class="sig-paren">)</span></dt>
+<dd><p>真實資料與合成資料之取樣</p>
+<dl class="field-list simple">
+<dt class="field-odd">參數</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_to_memory</strong> – 用電資料，為接續 both_main_apps_have_value.load_into_memory。example:：{<cite>144660</cite>:{pandas.DataFrame}, …}</p></li>
+<li><p><strong>apps</strong> (<em>list</em>) – 欲讀取的總電量與電器，第一個元素必須為 main。example:[<cite>main</cite>, <cite>bw</cite>]</p></li>
+<li><p><strong>seq_length</strong> (<em>int</em>) – 欲讀取 batch 的每一筆資料長度。24hrs 為單位的值 96</p></li>
+<li><p><strong>num_seq_per_batch</strong> (<em>int</em>) – 欲取的資料筆數</p></li>
+<li><p><strong>realsource_probabilities</strong> (<em>float</em>) – 真實資料抽樣機率</p></li>
+<li><p><strong>rng_seed</strong> (<em>int</em>) – 隨機種子(under construction)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt>
+<code class="descname">all_day</code><span class="sig-paren">(</span><em>user</em><span class="sig-paren">)</span></dt>
+<dd><p>選取一天，即從 00:00~23:59</p>
+<dl class="field-list simple">
+<dt class="field-odd">傳回</dt>
+<dd class="field-odd"><p>two Seqence class</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">check_apps_list_in_right_order</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>確認屬性 apps 之順序是否正確，總電量需要擺在第一順位</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">feature_for_main</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>經由方法 slide 所萃取的特徵</p>
+<dl class="field-list simple">
+<dt class="field-odd">傳回</dt>
+<dd class="field-odd"><p>two Seqence class</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_batch</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>執行資料批次取樣</p>
+<dl class="field-list simple">
+<dt class="field-odd">傳回</dt>
+<dd class="field-odd"><p>a Batch object or None if source iterator has hit a StopIteration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="classmethod">
+<dt>
+<em class="property">classmethod </em><code class="descname">slide</code><span class="sig-paren">(</span><em>main</em>, <em>windows=6</em>, <em>s=1</em><span class="sig-paren">)</span></dt>
+<dd><p>一維卷積特徵萃取(平均)萃取特徵</p>
+<dl class="field-list simple">
+<dt class="field-odd">傳回</dt>
+<dd class="field-odd"><p>a list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">nilm.preprocess.source.</code><code class="descname">UserDailyLoad</code><span class="sig-paren">(</span><em>data_to_memory</em>, <em>apps</em>, <em>seq_length=96</em>, <em>num_seq_per_batch=1</em>, <em>realsource_probabilities=None</em>, <em>rng_seed=None</em><span class="sig-paren">)</span></dt>
+<dd><p>推播資料之取樣，以一天為基礎</p>
+<dl class="field-list simple">
+<dt class="field-odd">參數</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_to_memory</strong> – 用電資料，為接續 both_main_apps_have_value.load_into_memory。example:：{<cite>144660</cite>:{pandas.DataFrame}, …}</p></li>
+<li><p><strong>apps</strong> (<em>list</em>) – 欲讀取的總電量與電器，第一個元素必須為 main。example:[<cite>main</cite>, <cite>bw</cite>]</p></li>
+<li><p><strong>seq_length</strong> (<em>int</em>) – 欲讀取 batch 的每一筆資料長度。24hrs為單位的值96</p></li>
+<li><p><strong>num_seq_per_batch</strong> (<em>int</em>) – 欲取的資料筆數</p></li>
+<li><p><strong>realsource_probabilities</strong> (<em>float</em>) – 真實資料抽樣機率</p></li>
+<li><p><strong>rng_seed</strong> (<em>int</em>) – 隨機種子 (under construction)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt>
+<code class="descname">check_apps_list_in_right_order</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>確認屬性 apps 之順序是否正確，總電量需要擺在第一順位</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">feature_for_main</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>經由方法 slide 所萃取的特徵</p>
+<dl class="field-list simple">
+<dt class="field-odd">傳回</dt>
+<dd class="field-odd"><p>two Seqence class</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_batch</code><span class="sig-paren">(</span><em>user</em><span class="sig-paren">)</span></dt>
+<dd><p>選取一天，即從 00:00~23:59</p>
+<dl class="field-list simple">
+<dt class="field-odd">傳回</dt>
+<dd class="field-odd"><p>two Seqence class</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="classmethod">
+<dt>
+<em class="property">classmethod </em><code class="descname">slide</code><span class="sig-paren">(</span><em>main</em>, <em>windows=6</em>, <em>s=1</em><span class="sig-paren">)</span></dt>
+<dd><p>一維卷積特徵萃取(平均)萃取特徵</p>
+<dl class="field-list simple">
+<dt class="field-odd">傳回</dt>
+<dd class="field-odd"><p>a list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tapower_ami_apps</a></h1>
+
+
+
+
+
+
+
+
+<h3>瀏覽</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="nilm.db.forms.html">nilm.db.forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.db.create_db.html">nilm.db.create_db</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.inference.infer.html">nilm.inference.infer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.inference.metrics.html">nilm.inference.metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.preprocess.both_main_apps_have_value.html">nilm.preprocess.both_main_apps_have_value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.preprocess.preprocess_from_csv.html">nilm.preprocess.preprocess_from_csv</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">nilm.preprocess.source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.preprocess.taipower_iii_format.html">nilm.preprocess.taipower_iii_format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.bilstm.html">nilm.trainer.bilstm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.dae.html">nilm.trainer.dae</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.knn_layer.html">nilm.trainer.knn_layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.semi_layer_model.html">nilm.trainer.semi_layer_model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.sparse_auto_layer.html">nilm.trainer.sparse_auto_layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.trainer.html">nilm.trainer.trainer</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="nilm.preprocess.preprocess_from_csv.html" title="上一章">nilm.preprocess.preprocess_from_csv</a></li>
+      <li>Next: <a href="nilm.preprocess.taipower_iii_format.html" title="下一章">nilm.preprocess.taipower_iii_format</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜尋</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="搜" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Fangyi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/nilm.preprocess.source.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

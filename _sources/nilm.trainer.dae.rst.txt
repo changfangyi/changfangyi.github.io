@@ -1,0 +1,7 @@
+nilm.trainer.dae
+================
+
+.. automodule:: nilm.trainer.dae
+   :members: JKDae
+   :noindex: 
+

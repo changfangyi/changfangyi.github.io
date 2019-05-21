@@ -1,0 +1,7 @@
+nilm.trainer.bilstm
+===================
+
+.. automodule:: nilm.trainer.bilstm
+   :members: JKBiLstm
+   :noindex: 
+

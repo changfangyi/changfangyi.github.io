@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_TW">
+  <head>
+    <meta charset="utf-8" />
+    <title>nilm.preprocess.preprocess_from_csv &#8212; tapower_ami_apps 0.0 說明文件</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜尋" href="search.html" />
+    <link rel="next" title="nilm.preprocess.source" href="nilm.preprocess.source.html" />
+    <link rel="prev" title="nilm.preprocess.both_main_apps_have_value" href="nilm.preprocess.both_main_apps_have_value.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="nilm-preprocess-preprocess-from-csv">
+<h1>nilm.preprocess.preprocess_from_csv<a class="headerlink" href="#nilm-preprocess-preprocess-from-csv" title="本標題的永久連結">¶</a></h1>
+<dl>
+<dt>..module: preprocess_from_csv</dt><dd><dl class="field-list">
+<dt class="field-odd">synopsis</dt>
+<dd class="field-odd"><p>資料清理 raw.csv （ In-Synergy DB 下載）。</p>
+<p>清理項目：</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><p>清除NA值</p></li>
+<li><p>使用前一個與後一個值的平均，至多在連續缺值的數列中補一個缺值</p></li>
+<li><p>移除不合理之數值（deflaut 定義小於0與大於10000為不合理之數值）</p></li>
+</ul>
+</div></blockquote>
+<p>補充：</p>
+<p>raw.csv 之格式為：</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>..moduleauther:: Fangyi</p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">nilm.preprocess.preprocess_from_csv.</code><code class="descname">PreFromCsv</code><span class="sig-paren">(</span><em>users</em>, <em>start</em>, <em>end</em>, <em>csv='./data/DSM/raw_dataset.csv'</em>, <em>save='./data/DSM/pre_from_csv.npy'</em>, <em>sample_rate='15T'</em><span class="sig-paren">)</span></dt>
+<dd><dl class="simple">
+<dt>資料清理，以 raw.csv 檔案為基礎而撰寫。清理項目： </dt><dd><ul class="simple">
+<li><p>清除NA值</p></li>
+<li><p>使用前一個與後一個值的平均，至多在連續缺值的數列中補一個缺值</p></li>
+<li><p>移除不合理之數值（deflaut 定義小於0與大於10000為不合理之數值）</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">參數</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>users</strong> (<em>list</em><em> or </em><em>string</em>) – 使用者ID。example: [144660, 14665]。<cite>all</cite>：自動搜尋全部。</p></li>
+<li><p><strong>start</strong> (<em>str</em><em>, </em><em>YYYY-mm-dd</em>) – 資料區間之起始點。example: 2017-09-01</p></li>
+<li><p><strong>end</strong> (<em>str</em><em>, </em><em>YYYY-mm-dd</em>) – 資料區間之最終點。example: 2017-09-30</p></li>
+<li><p><strong>csv</strong> (<em>str</em>) – 讀取 raw_csv之路徑。default:<cite>./data/DSM/raw_dataset.csv</cite></p></li>
+<li><p><strong>save</strong> (<em>str</em>) – 存取資料清理後之路徑，為 npy 檔案。default:<cite>./data/DSM/pre_from_csv.csv</cite></p></li>
+<li><p><strong>sample_rate</strong> (<em>str</em>) – 取樣頻率。default:15T</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="classmethod">
+<dt>
+<em class="property">classmethod </em><code class="descname">average_na</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span></dt>
+<dd><p>使用前一個與後一個值的平均，至多在連續缺值的數列中補一個缺值</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">data_clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>啟動資料清理過程，完成後結果為 npy 檔案，並存至指定路徑（save）</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt>
+<em class="property">classmethod </em><code class="descname">delete_na</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span></dt>
+<dd><p>刪除有缺值之資料</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt>
+<em class="property">classmethod </em><code class="descname">delete_outliers</code><span class="sig-paren">(</span><em>df</em>, <em>threshold=10000</em><span class="sig-paren">)</span></dt>
+<dd><p>刪除不合理之數值：
+遇到 負數 直接砍，因為發現 sensor 本身有問題
+預設刪除 &gt; 10000 或 &lt; 0 的值</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt>
+<em class="property">classmethod </em><code class="descname">find_all_channels</code><span class="sig-paren">(</span><em>df_individual_house</em><span class="sig-paren">)</span></dt>
+<dd><p>搜尋全部channel</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt>
+<em class="property">classmethod </em><code class="descname">find_all_users</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span></dt>
+<dd><p>搜尋全部使用者</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">load_III_format_dataset</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>讀取資料，重新reindex成時間index，請取指定區間</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tapower_ami_apps</a></h1>
+
+
+
+
+
+
+
+
+<h3>瀏覽</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="nilm.db.forms.html">nilm.db.forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.db.create_db.html">nilm.db.create_db</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.inference.infer.html">nilm.inference.infer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.inference.metrics.html">nilm.inference.metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.preprocess.both_main_apps_have_value.html">nilm.preprocess.both_main_apps_have_value</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">nilm.preprocess.preprocess_from_csv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.preprocess.source.html">nilm.preprocess.source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.preprocess.taipower_iii_format.html">nilm.preprocess.taipower_iii_format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.bilstm.html">nilm.trainer.bilstm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.dae.html">nilm.trainer.dae</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.knn_layer.html">nilm.trainer.knn_layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.semi_layer_model.html">nilm.trainer.semi_layer_model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.sparse_auto_layer.html">nilm.trainer.sparse_auto_layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nilm.trainer.trainer.html">nilm.trainer.trainer</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="nilm.preprocess.both_main_apps_have_value.html" title="上一章">nilm.preprocess.both_main_apps_have_value</a></li>
+      <li>Next: <a href="nilm.preprocess.source.html" title="下一章">nilm.preprocess.source</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜尋</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="搜" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Fangyi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/nilm.preprocess.preprocess_from_csv.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
