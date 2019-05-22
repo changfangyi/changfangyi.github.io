@@ -50,12 +50,46 @@
 </div></blockquote>
 <p>補充：</p>
 <p>raw.csv 之格式為：</p>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 41%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>channelid</p></th>
+<th class="head"><p>reporttime</p></th>
+<th class="head"><p>w</p></th>
+<th class="head"><p>User_ID</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>channel code</p></td>
+<td><p>YYYY-mm-dd HH:MM:SS</p></td>
+<td><p>Watts</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="simple">
+<dt>channel code:</dt><dd><ul class="simple">
+<li><p>0: 總用電</p></li>
+<li><p>1: 其他</p></li>
+<li><p>2: 電視</p></li>
+<li><p>3: 冰箱</p></li>
+<li><p>4: 冷氣</p></li>
+<li><p>5: 電熱水瓶</p></li>
+<li><p>6: 洗衣機</p></li>
+</ul>
+</dd>
+</dl>
 </div></blockquote>
 </dd>
 </dl>
 </dd>
 </dl>
-<p>..moduleauther:: Fangyi</p>
+<p>..moduleauther:: Fangyi&lt;<a class="reference external" href="mailto:fangyichang&#37;&#52;&#48;iii&#46;org&#46;tw">fangyichang<span>&#64;</span>iii<span>&#46;</span>org<span>&#46;</span>tw</a>&gt;</p>
 <dl class="class">
 <dt>
 <em class="property">class </em><code class="descclassname">nilm.preprocess.preprocess_from_csv.</code><code class="descname">PreFromCsv</code><span class="sig-paren">(</span><em>users</em>, <em>start</em>, <em>end</em>, <em>csv='./data/DSM/raw_dataset.csv'</em>, <em>save='./data/DSM/pre_from_csv.npy'</em>, <em>sample_rate='15T'</em><span class="sig-paren">)</span></dt>

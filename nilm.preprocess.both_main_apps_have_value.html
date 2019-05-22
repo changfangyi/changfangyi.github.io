@@ -54,7 +54,7 @@
 </dl>
 </dd>
 </dl>
-<p>..moduleauther:: Fangyi</p>
+<p>..moduleauther:: Fangyi&lt;<a class="reference external" href="mailto:fangyichang&#37;&#52;&#48;iii&#46;org&#46;tw">fangyichang<span>&#64;</span>iii<span>&#46;</span>org<span>&#46;</span>tw</a>&gt;</p>
 <dl class="class">
 <dt>
 <em class="property">class </em><code class="descclassname">nilm.preprocess.both_main_apps_have_value.</code><code class="descname">BothMainAppsHaveValue</code><span class="sig-paren">(</span><em>users</em>, <em>apps</em>, <em>npy='./data/DSM/pre_from_csv.npy'</em>, <em>main_divide_by_1000=True</em><span class="sig-paren">)</span></dt>
@@ -77,7 +77,29 @@
 <code class="descname">to_load_into_memory</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>確定總電量與目標電器在同一個時間點均有值，並轉換成下列pandas.DataFrame之格式：</p>
 <blockquote>
-<div><p>以此格式進入資料訓練或者驗證階段。</p>
+<div><table class="docutils align-center">
+<colgroup>
+<col style="width: 54%" />
+<col style="width: 15%" />
+<col style="width: 21%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>reporttime</p></th>
+<th class="head"><p>main</p></th>
+<th class="head"><p>fridge</p></th>
+<th class="head"><p>ac</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2017-09-01 00:00:00</p></td>
+<td><p>1.34</p></td>
+<td><p>0.34</p></td>
+<td><p>0.3</p></td>
+</tr>
+</tbody>
+</table>
+<p>以此格式進入資料訓練或者驗證階段。</p>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">傳回</dt>
